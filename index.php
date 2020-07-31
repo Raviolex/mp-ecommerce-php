@@ -1,6 +1,6 @@
 <?php
 // SDK de Mercado Pago
-require __DIR__ .  '/vendor/autoload.php';
+require __DIR__ .  '/ext/vendor/autoload.php';
 MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143"); // Either Production or SandBox AccessToken
 
   $payment = new MercadoPago\Payment();
