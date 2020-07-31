@@ -1,20 +1,15 @@
 <?php require __DIR__ .  '/ext/vendor/autoload.php';
 MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143"); // Either Production or SandBox AccessToken
 
-  $payment = new MercadoPago\Payment();
+$preference = new MercadoPago\Preference();
 
-  $payment->transaction_amount = 141;
-  $payment->token = "4170 0688 1010 8020";
-  $payment->description = "Ergonomic Silk Shirt";
-  $payment->installments = 1;
-  $payment->payment_method_id = "visa";
-  $payment->payer = array(
-    "email" => "tomasgonzlp@gmail.com"
-  );
-
-  $payment->save();
-
-  echo $payment->status; ?>
+// Crea un ítem en la preferencia
+$item = new MercadoPago\Item();
+$item->title = 'Mi producto';
+$item->quantity = 1;
+$item->unit_price = 75.56;
+$preference->items = array($item);
+$preference->save(); ?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -147,12 +142,12 @@ MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                   
+
 
                                     <form action="/procesar-pago" method="POST">
                                       <script
                                        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
-                                       data-preference-id="<?php echo $payment->id; ?>">
+                                       data-preference-id="<?php echo $preference->id; ?>">
                                       </script>
                                     </form>
 
