@@ -149,6 +149,7 @@ $preference->save(); ?>
                                        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
                                        data-preference-id="<?php echo $payment->id; ?>">
                                       </script>
+                                      <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                     </form>
 
 
