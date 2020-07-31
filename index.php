@@ -1,3 +1,25 @@
+<?php
+// SDK de Mercado Pago
+require __DIR__ .  'ext/vendor/autoload.php';
+MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143"); // Either Production or SandBox AccessToken
+
+  $payment = new MercadoPago\Payment();
+
+  $payment->transaction_amount = 141;
+  $payment->token = "YOUR_CARD_TOKEN";
+  $payment->description = "Ergonomic Silk Shirt";
+  $payment->installments = 1;
+  $payment->payment_method_id = "visa";
+  $payment->payer = array(
+    "email" => "larue.nienow@email.com"
+  );
+
+  $payment->save();
+
+  echo $payment->status;
+?>
+
+
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -55,7 +77,7 @@
                                     <img src="./assets/music-audio-alp-201709" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
                                 </div>
                                 <div class="pd-billboard-info">
-                                    <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-scommerce</h1>
+                                    <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-commerce</h1>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +99,7 @@
 
                                     <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                         <h2 class=" as-filter-button-text">
-                                            Smarafafafafafaftphones
+                                            Smartphones
                                         </h2>
                                     </button>
 
