@@ -147,18 +147,14 @@ MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
-
+                                   
 
                                     <form action="/procesar-pago" method="POST">
                                       <script
                                        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
-                                       data-preference-id="<?php echo $preference->id; ?>">
+                                       data-preference-id="<?php echo $payment->id; ?>">
                                       </script>
                                     </form>
-
-
-
 
 
                                 </div>
