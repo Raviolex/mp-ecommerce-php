@@ -4,12 +4,12 @@ MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15
   $payment = new MercadoPago\Payment();
 
   $payment->transaction_amount = 141;
-  $payment->token = "YOUR_CARD_TOKEN";
+  $payment->token = "4170 0688 1010 8020";
   $payment->description = "Ergonomic Silk Shirt";
   $payment->installments = 1;
   $payment->payment_method_id = "visa";
   $payment->payer = array(
-    "email" => "larue.nienow@email.com"
+    "email" => "tomasgonzlp@gmail.com"
   );
 
   $payment->save();

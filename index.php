@@ -1,22 +1,26 @@
 <?php
 // SDK de Mercado Pago
-require __DIR__ .  '/ext/vendor/autoload.php';
+require __DIR__ .  'ext/vendor/autoload.php';
 MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143"); // Either Production or SandBox AccessToken
 
-  $payment = new MercadoPago\Payment();
+$payment = new MercadoPago\Payment();
 
-  $payment->transaction_amount = 141;
-  $payment->token = "YOUR_CARD_TOKEN";
-  $payment->description = "Ergonomic Silk Shirt";
-  $payment->installments = 1;
-  $payment->payment_method_id = "visa";
-  $payment->payer = array(
-    "email" => "larue.nienow@email.com"
-  );
+$payment->transaction_amount = 141;
+$payment->token = "4170 0688 1010 8020";
+$payment->description = "Ergonomic Silk Shirt";
+$payment->installments = 1;
+$payment->payment_method_id = "visa";
+$payment->payer = array(
+  "email" => "tomasgonzlp@gmail.com"
+);
 
   $payment->save();
 
   echo $payment->status;
+  var_dump($payment);
+
+
+
 ?>
 
 
@@ -24,7 +28,7 @@ MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=1024">
-    <title>Tienda e-commerce</title>
+    <title>Tienda e-commerceV1</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no">
