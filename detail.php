@@ -9,7 +9,12 @@ $item->title = 'Mi producto';
 $item->quantity = 1;
 $item->unit_price = 75.56;
 $preference->items = array($item);
-$preference->save(); ?>
+$preference->save();
+
+var_dump($preference);
+
+
+?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
