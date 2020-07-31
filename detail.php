@@ -148,7 +148,7 @@ var_dump($preference);
                                         </h3>
                                     </div>
 
-
+<a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
                                     <form action="/procesar-pago" method="POST">
                                       <script
                                        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
