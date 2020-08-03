@@ -7,7 +7,7 @@ $domain = 'https://raviolex-mp-commerce-php.herokuapp.com';
 
 if( isset($_POST['title']) ) {
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-5989266223361037-073121-014a414870f0e63bd698e86037af6fdd-75765143');
+MercadoPago\SDK::setAccessToken('TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143');
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
