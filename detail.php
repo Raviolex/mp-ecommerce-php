@@ -80,9 +80,7 @@ MercadoPago\SDK::setAccessToken("TEST-6300848884069710-050717-cbb71b23e134fccd94
 
 
 
-var_dump($preference);
-
-
+ 
 
 ?>
 
