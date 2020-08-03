@@ -3,11 +3,11 @@
 require __DIR__ .  '/vendor/autoload.php';
 
 // $domain = 'http://localhost:8282';
-$domain = 'https://amamarul-mp-ecommerce-php.herokuapp.com';
+$domain = 'https://raviolex-mp-commerce-php.herokuapp.com';
 
 if( isset($_POST['title']) ) {
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-090914-5c508e1b02a34fcce879a999574cf5c9-469485398');
+MercadoPago\SDK::setAccessToken('APP_USR-5989266223361037-073121-014a414870f0e63bd698e86037af6fdd-75765143');
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
