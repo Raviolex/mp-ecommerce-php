@@ -218,9 +218,6 @@
                             </div>
                             <div class="column small-12 as-search-results-tiles as-search-results-width">
 
-                                <?php require __DIR__ . '/mp_response.php'; ?>
-
-
                                 <div class="as-producttile large-4 small-6 group-1">
                                     <div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
                                         <div class="as-dummy-container as-dummy-img">
@@ -554,7 +551,7 @@
             </div>
         </div>
         <div role="alert" class="as-loader-text ally" aria-live="assertive"></div>
-        <div class="as-footnotes ">
+        <div class="as-footnotes" style="position:fixed; bottom:0; width:100%; text-align:center; z-index:200">
             <div class="as-footnotes-content">
                 <div class="as-footnotes-sosumi">
                     Todos los derechos reservados Tienda Tecno 2018

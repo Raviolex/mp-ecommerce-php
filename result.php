@@ -1,58 +1,41 @@
 <?php
-require __DIR__ .  '/vendor/autoload.php';
+$status = $_GET['s'];
+$reference = $_GET['ref'];
 
-MercadoPago\SDK::setAccessToken('TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143');
-//define('URL', 'https://ecom.dev');
-define('URL', 'https://lavacodershub-mp-ecommerce-php.herokuapp.com');
-
-$preference = new MercadoPago\Preference();
-
-$payer = new MercadoPago\Payer();
-$payer->name = "Lalo";
-$payer->surname = "Landa";
-$payer->email = "test_user_63274575@testuser.com";
-$payer->date_created = date(time());
-$payer->phone = array(
-    "area_code" => "011",
-    "number" => "22223333"
-);
-$payer->identification = array(
-    "type" => "DNI",
-    "number" => "22333444"
-);
-$payer->address = array(
-    "street_name" => "Falsa",
-    "street_number" => 123,
-    "zip_code" => "1111"
-);
-
-$item = new MercadoPago\Item();
-$item->id = 1234;
-$item->title = $_POST['title'];
-$item->description = "Dispositivo móvil de Tienda e-commerce";
-$item->quantity = 1;
-$item->unit_price = $_POST['price'];
-$item->picture_url = $_POST['img'];
-$preference->items = array($item);
-
-$reference = "ABCD1234";
-$preference->external_reference = $reference;
-$preference->payment_methods = [
-    'excluded_payment_methods' => array(array('id' => 'amex')),
-    'excluded_payment_types' => array(array('id' => 'atm')),
-    'installments' => 6
-];
-
-$preference->back_urls = [
-    'success' => URL.'/result.php?s=success&ref='.$reference,
-    'failure' => URL.'/result.php?s=failure&ref='.$reference,
-    'pending' => URL.'/result.php?s=pending&ref='.$reference
-];
-
-$preference->notification_url = URL.'/payment.php';
-$preference->auto_return = 'approved';
-
-$preference->save();
+switch ($status) {
+    case 'success':
+        $title = 'Compra completada';
+        $text = 'Tu compra fue completada con el código de referencia <strong>'.$reference.'</strong>.<br/>';
+        $text.= "Método de pago: ".$_GET['type']." ".$_GET['method_id']."<br/>";
+        $text.= "Monto pagado: $ ".number_format($_GET['amount'], 2, ",", ".")."<br/>";
+        $text.= "Identificador de pago: ".$_GET['pid']."<br/>";
+        $text.= "<br/>¡Muchas gracias!";
+        break;
+    case 'pending':
+        $title = 'Compra completada';
+        $text = 'Tu compra fue completada con el código de referencia <strong>'.$reference.'</strong>.<br/><strong>El pago de la misma aún está pendiente</strong>.<br/>Realiza el mismo en los puntos de cobro habilitados para que podamos procesar tu compra.<br/>';
+        $text.= "Método de pago: ".$_GET['type']." ".$_GET['method_id']."<br/>";
+        $text.= "Monto pagado: $ ".number_format($_GET['amount'], 2, ",", ".")."<br/>";
+        $text.= "Identificador de pago: ".$_GET['pid']."<br/>";
+        $text.= "<br/>¡Muchas gracias!";
+        break;
+    case 'in_process':
+        $title = 'Compra en proceso';
+        $text = 'Tu compra con el código de referencia <strong>'.$reference.'</strong> aún está en proceso de pago.<br/>Nos comunicaremos a la brevedad si necesitamos más información o si el pago es aprobado.<br/>';
+        $text.= "Método de pago: ".$_GET['type']." ".$_GET['method_id']."<br/>";
+        $text.= "Monto pagado: $ ".number_format($_GET['amount'], 2, ",", ".")."<br/>";
+        $text.= "Identificador de pago: ".$_GET['pid']."<br/>";
+        $text.= "<br/>¡Muchas gracias!";
+        break;
+    case 'failure':
+        $title = 'Tu compra no pudo ser completada';
+        $text = 'No fue posible procesar tu compra. Intenta nuevamente con un medio de pago diferente.';
+        break;
+    default:
+        $title = 'No fue posible procesar tu compra';
+        $text = 'Ocurrió un error mientras intentabamos procesar tu compra. Por favor intenta nuevamente.';
+        break;
+}
 ?>
 
 <!DOCTYPE html>
@@ -130,74 +113,25 @@ $preference->save();
                         </div>
                         <div class="as-searchnav-placeholder" style="height: 77px;">
                             <div class="row as-search-navbar" id="as-search-navbar" style="width: auto;">
-                                <div class="as-accessories-filter-tile column large-6 small-3">
+                                <div class="as-accessories-filter-tile column large-12 small-3">
 
                                     <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                         <h2 class=" as-filter-button-text">
-                                            Smartphones
+                                            <?php echo $title;?>
                                         </h2>
                                     </button>
 
+                                    <p style="margin-top:50px; text-align:center; font-size:25px; width:100%; display:block;">
+                                        <?php
+                                        echo $text;
+                                        ?>
+                                    </p>
 
+                                    <div style="text-align:center; margin-top:50px;">
+                                        <a href="index.php" class="mercadopago-button" formmethod="post" style="font-size:20px; padding:10px 20px;">Continuar</a>
+                                    </div>
                                 </div>
 
-                            </div>
-                        </div>
-                        <div class="as-accessories-results  as-search-desktop">
-                            <div class="width:60%">
-                                <div class="as-producttile-tilehero with-paddlenav " style="float:left;">
-                                    <div class="as-dummy-container as-dummy-img">
-
-                                        <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
-                                    </div>
-                                    <div class="images mini-gallery gal5 ">
-
-
-                                        <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
-                                            <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
-                                                <div class="as-tilegallery-element as-image-selected">
-                                                    <div class=""></div>
-                                                    <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url(<?php echo $_POST['img'] ?>) 2x);">
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-
-
-
-                                    </div>
-
-                                </div>
-                                <div class="as-producttile-info" style="float:left;min-height: 168px;">
-                                    <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
-                                        <div class="as-producttile-title">
-                                            <h3 class="as-producttile-name">
-                                                <p class="as-producttile-tilelink">
-                                                    <span data-ase-truncate="2"><?php echo $_POST['title'] ?></span>
-                                                </p>
-
-                                            </h3>
-                                        </div>
-                                        <h3 >
-                                            <?php echo "$" . $_POST['price'] ?>
-                                        </h3>
-                                        <h3 >
-                                            Cantidad: <?php echo $_POST['unit'] ?>
-                                        </h3>
-                                    </div>
-
-                                    <form action="process.php" method="POST">
-                                      <script
-                                       src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                                       data-preference-id="<?php echo $preference->id; ?>"
-                                       data-header-color="#2D3277"
-                                       data-elements-color="#2D3277"
-                                       data-button-label="Pagar la compra">
-                                      </script>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                     </div>
