@@ -1,47 +1,17 @@
-<?php
-// SDK de Mercado Pago
-require __DIR__ .  '/ext/vendor/autoload.php';
-MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143"); // Either Production or SandBox AccessToken
-
-$payment = new MercadoPago\Payment();
-
-$payment->transaction_amount = 141;
-$payment->token = "4170 0688 1010 8020";
-$payment->description = "Ergonomic Silk Shirt";
-$payment->installments = 1;
-$payment->payment_method_id = "visa";
-$payment->payer = array(
-  "email" => "tomasgonzlp@gmail.com"
-);
-
-  $payment->save();
-
-  echo $payment->status;
-
-
-?>
-
-
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=1024">
-    <title>Tienda e-commerceV1</title>
-
+    <title>Tienda e-commerce</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no">
-
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
-
     <link rel="stylesheet" href="./assets/category.css" media="screen, print">
-
     <link rel="stylesheet" href="./assets/merch-tools.css" media="screen, print">
-
     <link rel="stylesheet" href="./assets/fonts" media="">
     <style>
         .as-filter-button-text {
@@ -62,11 +32,7 @@ $payment->payer = array(
         }
     </style>
 <style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style><style type="text/css"> @keyframes loading-rotate { 100% { transform: rotate(360deg); } } @keyframes loading-dash { 0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 100, 200; stroke-dashoffset: -20px; } 100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; } } @keyframes loading-fade-in { from { opacity: 0; } to { opacity: 1; } } .mp-spinner { position: absolute; top: 100px; left: 50%; font-size: 70px; margin-left: -35px; animation: loading-rotate 2.5s linear infinite; transform-origin: center center; width: 1em; height: 1em; } .mp-spinner-path { stroke-dasharray: 1, 200; stroke-dashoffset: 0; animation: loading-dash 1.5s ease-in-out infinite; stroke-linecap: round; stroke-width: 2px; stroke: #009ee3; } </style><style type="text/css"> .mercadopago-button { padding: 0 1.7142857142857142em; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 0.875em; line-height: 2.7142857142857144; background: #009ee3; border-radius: 0.2857142857142857em; color: #fff; cursor: pointer; border: 0; } </style></head>
-
-
-
 <body class="as-theme-light-heroimage">
-
     <div class="stack">
 
         <div class="as-search-wrapper" role="main">
@@ -87,7 +53,6 @@ $payment->payer = array(
                 </div>
             </div>
             <div class="as-search-results as-filter-open as-category-landing as-desktop" id="as-search-results">
-
                 <div id="accessories-tab" class="as-accessories-details">
                     <div class="as-accessories" id="as-accessories">
                         <div class="as-accessories-header">
@@ -98,22 +63,16 @@ $payment->payer = array(
                         <div class="as-searchnav-placeholder" style="height: 77px;">
                             <div class="row as-search-navbar" id="as-search-navbar" style="width: auto;">
                                 <div class="as-accessories-filter-tile column large-6 small-3">
-
                                     <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                         <h2 class=" as-filter-button-text">
                                             Smartphones
                                         </h2>
                                     </button>
-
-
                                 </div>
-
                             </div>
                         </div>
                         <div class="as-accessories-results  as-search-desktop">
                             <div class="column as-search-filters" aria-hidden="false" id="as-search-filters" style="position: relative;">
-
-
                                 <div class="as-search-filter-container" style="transform: translate3d(0px, 0px, 0px);">
                                     <ul class="as-accordion-list">
                                         <li class="as-accordion-item">
@@ -133,7 +92,6 @@ $payment->payer = array(
                                                         <ul class="as-search-filter-items  as-filter-text-type    ">
                                                             <li class="as-filter-item       ">
                                                                 <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_12_9_2, " role="checkbox" aria-checked="false">
-
                                                                     <span class="as-filter-name">
                                                                         <span class="as-search-filter-content">
                                                                             <span class="as-search-filter-text">
@@ -145,7 +103,6 @@ $payment->payer = array(
                                                             </li>
                                                             <li class="as-filter-item       ">
                                                                 <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_12_9, " role="checkbox" aria-checked="false">
-
                                                                     <span class="as-filter-name">
                                                                         <span class="as-search-filter-content">
                                                                             <span class="as-search-filter-text">
@@ -157,7 +114,6 @@ $payment->payer = array(
                                                             </li>
                                                             <li class="as-filter-item       ">
                                                                 <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_10_5, " role="checkbox" aria-checked="false">
-
                                                                     <span class="as-filter-name">
                                                                         <span class="as-search-filter-content">
                                                                             <span class="as-search-filter-text">
@@ -169,7 +125,6 @@ $payment->payer = array(
                                                             </li>
                                                             <li class="as-filter-item       ">
                                                                 <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipadpro_9_7, " role="checkbox" aria-checked="false">
-
                                                                     <span class="as-filter-name">
                                                                         <span class="as-search-filter-content">
                                                                             <span class="as-search-filter-text">
@@ -181,7 +136,6 @@ $payment->payer = array(
                                                             </li>
                                                             <li class="as-filter-item       ">
                                                                 <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipad_9_7, " role="checkbox" aria-checked="false">
-
                                                                     <span class="as-filter-name">
                                                                         <span class="as-search-filter-content">
                                                                             <span class="as-search-filter-text">
@@ -193,7 +147,6 @@ $payment->payer = array(
                                                             </li>
                                                             <li class="as-filter-item       ">
                                                                 <a href="" class="as-filter-option  " aria-disabled="false" tabindex="0" data-tracking="ipadCompatibility=ipad6gen, " role="checkbox" aria-checked="false">
-
                                                                     <span class="as-filter-name">
                                                                         <span class="as-search-filter-content">
                                                                             <span class="as-search-filter-text">
@@ -203,7 +156,6 @@ $payment->payer = array(
                                                                     </span>
                                                                 </a>
                                                             </li>
-
                                                         </ul>
                                                         <button class="as-searchmoreless-toggle as-searchfilter-morebutton  as-search-more" id="iPad Compatibility_more">
                                                             <span class="as-search-morelessbutton-text">More</span>
@@ -234,18 +186,13 @@ $payment->payer = array(
 
                                             </div>
                                         </li>
-
                                     </ul>
                                 </div>
-
-
                             </div>
                             <div class="column small-12 as-search-results-tiles as-search-results-width">
-
                                 <div class="as-producttile large-4 small-6 group-1">
                                     <div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
                                         <div class="as-dummy-container as-dummy-img">
-
                                             <img src="./assets/samsung-galaxy-s9-xxl.jpg" class="ir ir item-image as-producttile-image  " alt="" width="445" height="445">
                                         </div>
                                         <div class="images mini-gallery gal1 ">
@@ -254,9 +201,8 @@ $payment->payer = array(
                                                     <img src="./assets/samsung-galaxy-s9-xxl.jpg" class="ir relatedlink item-image as-producttile-image" alt="" width="445" height="445" data-scale-params-2="wid=890&amp;hei=890&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1502831144597">
                                                 </li>
                                             </ul>
-
                                             <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
-                                                <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="2|Beats Studio3 Wireless Over‑Ear Headphones - Shadow Gray|MQUF2">
+                                                <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="2|Beats Studio3 Wireless Over‑Ear Headphones - Shadow Gray|MQUF2">
                                                     <div class="as-tilegallery-element as-image-selected">
                                                         <div class=""></div>
                                                         <img src="./assets/samsung-galaxy-s9-xxl.jpg" class="ir ir item-image as-producttile-image" alt="" data-desc="Samsung galaxy" style="content:-webkit-image-set(url(https://md6.pricebaba.com/images/product/mobile/46638/samsung-galaxy-s9-xxl.jpg">
@@ -265,7 +211,6 @@ $payment->payer = array(
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="as-producttile-info" style="min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
@@ -274,7 +219,6 @@ $payment->payer = array(
                                                     <p class="as-producttile-tilelink">
                                                         <span data-ase-truncate="2">Samsung Galaxy S9</span>
                                                     </p>
-
                                                 </h3>
                                             </div>
                                             <div class="as-price-currentprice as-producttile-currentprice">
@@ -293,11 +237,9 @@ $payment->payer = array(
                                 <div class="as-producttile large-4 small-6 group-1">
                                     <div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
                                         <div class="as-dummy-container as-dummy-img">
-
                                             <img src="./assets/l6g6.jpg" class="ir ir item-image as-producttile-image " alt="" width="445" height="445">
                                         </div>
                                         <div class="images mini-gallery gal2 ">
-
                                             <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
                                                 <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="3|BeatsX Earphones - UNDEFEATED Limited Edition - Camo|MQD92">
                                                     <div class="as-tilegallery-element as-image-selected">
@@ -307,7 +249,6 @@ $payment->payer = array(
 
                                                 </div>
                                             </div>
-
                                             <div class="as-isipad" aria-hidden="true">
                                                 <ul class="clearfix">
                                                     <li class="as-searchtile-mobile">
@@ -315,21 +256,15 @@ $payment->payer = array(
                                                     </li>
                                                 </ul>
                                             </div>
-
                                         </div>
-
                                     </div>
                                     <div class="as-producttile-info" style="min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
                                             <div class="as-producttile-title">
                                                 <h3 class="as-producttile-name">
                                                     <p class="as-producttile-tilelink">
-
                                                         <span data-ase-truncate="2">LG G6</span>
-
-
                                                     </p>
-
                                                 </h3>
                                             </div>
                                             <div class="as-price-currentprice as-producttile-currentprice">
@@ -348,7 +283,6 @@ $payment->payer = array(
                                 <div class="as-producttile large-4 small-6 group-1">
                                     <div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
                                         <div class="as-dummy-container as-dummy-img">
-
                                             <img src="./assets/Screen Shot 2017-11-01 at 13.01.54.png" class="ir ir item-image as-producttile-image  " alt="" width="445" height="445">
                                         </div>
                                         <div class="images mini-gallery gal0 ">
@@ -357,7 +291,6 @@ $payment->payer = array(
                                                     <img src="./assets/MMEF2" class="ir relatedlink item-image as-producttile-image" alt="" width="445" height="445" data-scale-params-2="wid=890&amp;hei=890&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503962928226">
                                                 </li>
                                             </ul>
-
                                             <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
                                                 <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="1|AirPods|MMEF2" style="left: 0px;">
                                                     <div class="as-tilegallery-element as-image-selected">
@@ -371,10 +304,7 @@ $payment->payer = array(
                                                 </div>
                                             </div>
 
-
-
                                         </div>
-
                                     </div>
                                     <div class="as-producttile-info" style="min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
@@ -382,10 +312,7 @@ $payment->payer = array(
                                                 <h3 class="as-producttile-name">
                                                     <div class="as-producttile-tilelink relatedlink" data-var-name="s.prop27|s.prop29" data-relatedlink="1|AirPods|MMEF2" data-evar11="MMEF2|category">
                                                     <span data-ase-truncate="2">iPhone 8</span>
-
-
                                                     </div>
-
                                                 </h3>
                                             </div>
                                             <div class="as-price-currentprice as-producttile-currentprice">
@@ -406,43 +333,35 @@ $payment->payer = array(
                                 <div class="as-producttile large-4 small-6 group-2">
                                     <div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
                                         <div class="as-dummy-container as-dummy-img">
-
                                             <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " alt="" width="445" height="445">
                                         </div>
                                         <div class="images mini-gallery gal3 ">
 
-
                                             <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
-                                                <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="4|BeatsX Earphones - Matte Silver|MR3J2">
+                                                <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="4|BeatsX Earphones - Matte Silver|MR3J2">
                                                     <div class="as-tilegallery-element as-image-selected">
                                                         <div class=""></div>
-                                                        <img src="./assets/motorola-moto-g5-plus-1.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" data-desc="BeatsX Earphones - Matte Silver - Image 1 " style="content:-webkit-image-set(url(https://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g5-plus-1.jpg) 1x);">
+                                                        <img src="./assets/motorola-moto-g5-plus-1.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" data-desc="BeatsX Earphones - Matte Silver - Image 1 " style="content:-webkit-image-set(url(https://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g5-plus-1.jpg) 1x);">
                                                     </div>
 
                                                 </div>
-
                                             </div>
-
                                             <div class="as-isipad" aria-hidden="true">
                                                 <ul class="clearfix">
                                                     <li class="as-searchtile-mobile">
-                                                        <img src="./assets/MR3J2" class="ir as-util-relatedlink item-image as-producttile-image relatedlink" alt="" width="445" height="445" data-scale-params-2="wid=890&amp;hei=890&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1504037421108" data-relatedlink="4|BeatsX Earphones - Matte Silver|MR3J2">
+                                                        <img src="./assets/MR3J2" class="ir as-util-relatedlink item-image as-producttile-image relatedlink" alt="" width="445" height="445" data-scale-params-2="wid=890&amp;hei=890&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1504037421108" data-relatedlink="4|BeatsX Earphones - Matte Silver|MR3J2">
                                                     </li>
                                                 </ul>
                                             </div>
-
                                         </div>
-
                                     </div>
                                     <div class="as-producttile-info" style="min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
                                             <div class="as-producttile-title">
                                                 <h3 class="as-producttile-name">
                                                     <p class="as-producttile-tilelink">
-
                                                         <span data-ase-truncate="2">Motorola G5</span>
                                                     </p>
-
                                                 </h3>
                                             </div>
                                             <div class="as-price-currentprice as-producttile-currentprice">
@@ -463,7 +382,6 @@ $payment->payer = array(
                                 <div class="as-producttile large-4 small-6 group-2">
                                     <div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
                                         <div class="as-dummy-container as-dummy-img">
-
                                             <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " alt="" width="445" height="445">
                                         </div>
                                         <div class="images mini-gallery gal4 ">
@@ -472,7 +390,6 @@ $payment->payer = array(
                                                     <img src="./assets/motorola-moto-g4-3.jpg" class="ir relatedlink item-image as-producttile-image" alt="" width="445" height="445" data-scale-params-2="wid=890&amp;hei=890&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1524778255945">
                                                 </li>
                                             </ul>
-
                                             <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
                                                 <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="5|Beats Solo3 Wireless On-Ear Headphones - Neighborhood Collection - Break Blue|MQ392">
                                                     <div class="as-tilegallery-element as-image-selected">
@@ -482,11 +399,8 @@ $payment->payer = array(
 
                                                 </div>
 
-
                                             </div>
-
                                         </div>
-
                                     </div>
                                     <div class="as-producttile-info" style="min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
@@ -513,11 +427,9 @@ $payment->payer = array(
                                 <div class="as-producttile large-4 small-6 group-2">
                                     <div class="as-producttile-tilehero with-paddlenav with-paddlenav-onhover">
                                         <div class="as-dummy-container as-dummy-img">
-
                                             <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " alt="" width="445" height="445">
                                         </div>
                                         <div class="images mini-gallery gal5 ">
-
 
                                             <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
                                                 <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
@@ -528,13 +440,9 @@ $payment->payer = array(
 
                                                 </div>
 
-
                                             </div>
 
-
-
                                         </div>
-
                                     </div>
                                     <div class="as-producttile-info" style="min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
@@ -543,7 +451,6 @@ $payment->payer = array(
                                                     <p class="as-producttile-tilelink">
                                                         <span data-ase-truncate="2">Sony Xperia XZ2</span>
                                                     </p>
-
                                                 </h3>
                                             </div>
                                             <div class="as-price-currentprice as-producttile-currentprice">
@@ -561,7 +468,6 @@ $payment->payer = array(
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="column large-12 small-12">
                                 <div class="as-pagination-align">
@@ -569,8 +475,6 @@ $payment->payer = array(
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -582,5 +486,4 @@ $payment->payer = array(
                 </div>
             </div>
         </div>
-<script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
 </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div id="ac-gn-viewport-emitter"> </div></body></html>
