@@ -64,6 +64,13 @@
     $preference->items = array($item);
 
     $preference->save();
+
+
+
+var_dump($preference);
+
+
+
 ?>
 
 <!DOCTYPE html>
