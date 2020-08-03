@@ -5,11 +5,11 @@
     // Agrega credenciales
 
 
-  MercadoPago\SDK::setAccessToken("APP_USR-2767046342004813-042418-0949c0cfe52c3dffb8b0ec2e3b59a68c-469485398");
+//  MercadoPago\SDK::setAccessToken("APP_USR-2767046342004813-042418-0949c0cfe52c3dffb8b0ec2e3b59a68c-469485398");
 
 //  MercadoPago\SDK::setAccessToken("APP_USR-5989266223361037-073121-014a414870f0e63bd698e86037af6fdd-75765143");
 
-
+MercadoPago\SDK::setAccessToken("TEST-6300848884069710-050717-cbb71b23e134fccd94ffef68216160a5-47398782");
 
 
 
