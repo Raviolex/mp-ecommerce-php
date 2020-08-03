@@ -3,7 +3,15 @@
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
-$access_token = 'APP_USR-5989266223361037-073121-014a414870f0e63bd698e86037af6fdd-75765143';
+$access_token = 'APP_USR-2767046342004813-042418-0949c0cfe52c3dffb8b0ec2e3b59a68c-469485398';
+//$access_token = 'APP_USR-5989266223361037-073121-014a414870f0e63bd698e86037af6fdd-75765143';
+
+
+
+//  MercadoPago\SDK::setAccessToken("APP_USR-5989266223361037-073121-014a414870f0e63bd698e86037af6fdd-75765143");
+
+
+
 $payment_id = $_POST["payment_id"];
 
 $cURLConnection = curl_init();
