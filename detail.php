@@ -3,7 +3,7 @@ require __DIR__ .  '/vendor/autoload.php';
 
 MercadoPago\SDK::setAccessToken('TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143');
 //define('URL', 'https://ecom.dev');
-define('URL', 'https://lavacodershub-mp-ecommerce-php.herokuapp.com');
+define('URL', 'https://raviolex-mp-commerce-php.herokuapp.com');
 
 $preference = new MercadoPago\Preference();
 

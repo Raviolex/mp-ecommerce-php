@@ -7,7 +7,7 @@ if (!isset($result['back_url'])) {
 
 require __DIR__ .  '/vendor/autoload.php';
 
-MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-090914-5c508e1b02a34fcce879a999574cf5c9-469485398');
+MercadoPago\SDK::setAccessToken('TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143');
 $payment = MercadoPago\Payment::find_by_id($result["payment_id"]);
 
 $result['back_url'] .= '&method_id='.$payment->payment_method_id;
