@@ -10,22 +10,22 @@
 
     $payer = new MercadoPago\Payer();
     $payer->name = "Lalo";
-    $payer->surname = "Landa";
-    $payer->email = "test_user_63274575@testuser.com";
+    $payer->surname = "Landi";
+    $payer->email = "test_u1er_64422575@testuser.com";
     $payer->phone = array(
         "area_code" => "011",
-        "number" => "22223333"
+        "number" => "22143323"
     );
 
     $payer->identification = array(
         "type" => "DNI",
-        "number" => "22333444"
+        "number" => "32443114"
     );
 
     $payer->address = array(
         "street_name" => "Falsa",
-        "street_number" => 123,
-        "zip_code" => "1111"
+        "street_number" => 124,
+        "zip_code" => "1900"
     );
 
     $preference->payer = $payer;
