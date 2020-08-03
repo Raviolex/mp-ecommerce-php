@@ -1,17 +1,62 @@
 <?php require __DIR__ .  '/ext/vendor/autoload.php';
+
 MercadoPago\SDK::setAccessToken("TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143"); // Either Production or SandBox AccessToken
+//   CREAR COMPRADOR
+$payer = new MercadoPago\Payer();
+  $payer->name = "Charles";
+  $payer->surname = "Luevano";
+  $payer->email = "charles@hotmail.com";
+  $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+  $payer->phone = array(
+    "area_code" => "",
+    "number" => "949 128 866"
+  );
 
-$preference = new MercadoPago\Preference();
-$payment = new MercadoPago\Payment();
+  $payer->identification = array(
+    "type" => "DNI",
+    "number" => "12345678"
+  );
 
-$payment->transaction_amount = 141;
-$payment->token = "4170 0688 1010 8020";
-$payment->description = "Ergonomic Silk Shirt";
-$payment->installments = 1;
-$payment->payment_method_id = "visa";
-$payment->payer = array(
-  "email" => "tomasgonzlp@gmail.com"
-);
+  $payer->address = array(
+    "street_name" => "Cuesta Miguel Armendáriz",
+    "street_number" => 1004,
+    "zip_code" => "11020"
+  );
+
+
+
+// FIN DE CREAR COMPRADOR
+
+//CREAR item
+
+$item = new MercadoPago\Item();
+ $item->id = "1234";
+ $item->title = "Heavy Duty Plastic Table";
+ $item->quantity = 7;
+ $item->currency_id = "ARS";
+ $item->unit_price = 75.56;
+ // ...
+
+ //FIN DE CREAR ITEM
+
+
+
+ $preference = new MercadoPago\Preference();
+
+ $preference->items = array($item);
+ $preference->save();
+ 
+
+$preference->save();
+
+
+
+
+
+
+
+
+
 
 
 
@@ -155,7 +200,7 @@ $payment->payer = array(
                                        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
                                        data-preference-id="<?php echo $payment->id; ?>">
                                       </script>
-                                   
+
                                     </form>
 
 
@@ -174,5 +219,5 @@ $payment->payer = array(
                 </div>
             </div>
         </div>
-
+<script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
 </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div id="ac-gn-viewport-emitter"> </div></body></html>
