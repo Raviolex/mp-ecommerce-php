@@ -18,7 +18,7 @@ $cURLConnection = curl_init();
 curl_setopt($cURLConnection, CURLOPT_URL, "https://api.mercadopago.com/v1/payments/$payment_id?access_token=$access_token");
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($cURLConnection);
-echo $response;
+
 curl_close($cURLConnection);
 
 $jsonResponse = json_decode($response);
@@ -27,6 +27,8 @@ $order_id = $jsonResponse->order->id;
 $payment_method_id = $jsonResponse->payment_method_id;
 $transaction_amount = $jsonResponse->transaction_amount;
 var_dump($payment_method_id);
+echo '<br>''<br>''<br>';
+
 var_dump($transaction_amount);
 
 ?>
