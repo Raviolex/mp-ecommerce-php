@@ -7,7 +7,7 @@ require __DIR__ .  '/vendor/autoload.php';
 
 //  MercadoPago\SDK::setAccessToken("APP_USR-5989266223361037-073121-014a414870f0e63bd698e86037af6fdd-75765143");
 
-MercadoPago\SDK::setAccessToken("TEST-6300848884069710-050717-cbb71b23e134fccd94ffef68216160a5-47398782");
+MercadoPago\SDK::setAccessToken("APP_USR-6300848884069710-050717-e6e82bb1dcba9f15dc8d66459cf040ca-47398782");
 
 
 
