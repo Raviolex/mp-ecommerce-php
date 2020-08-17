@@ -71,11 +71,8 @@ MercadoPago\SDK::setAccessToken("APP_USR-6300848884069710-050717-e6e82bb1dcba9f1
     $preference->external_reference = "ABCD1234";
 
     $preference->save();
-echo '<br><br><br><br><br>';
  
-
-  var_dump($preference);
-
+ 
 echo '<br><br><br><br><br>';
  
 
