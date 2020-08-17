@@ -72,7 +72,9 @@ MercadoPago\SDK::setAccessToken("APP_USR-6300848884069710-050717-e6e82bb1dcba9f1
 
     $preference->save();
  
- 
+echo '<pre>';
+  var_dump($preference);
+echo '</pre>';
 echo '<br><br><br><br><br>';
  
 
