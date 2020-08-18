@@ -1,7 +1,4 @@
 <?php
-/**
- * Payment Method class file
- */
 namespace MercadoPago;
 
 use MercadoPago\Annotation\RestMethod;
@@ -9,7 +6,6 @@ use MercadoPago\Annotation\RequestParam;
 use MercadoPago\Annotation\Attribute;
 
 /**
- * Payment Method class
  * @RestMethod(resource="/v1/payment_methods", method="list")
  * @RequestParam(param="access_token")
  */
@@ -17,100 +13,86 @@ use MercadoPago\Annotation\Attribute;
 class PaymentMethod extends Entity
 {
     /**
-     * id
      * @Attribute(primaryKey = true)
-     * @var string
+     * @var
      */
     protected $id;
 
     /**
-     * name
      * @Attribute(type = "string")
-     * @var string
+     * @var
      */
     protected $name;
 
     /**
-     * payment_type_id
      * @Attribute(type = "string")
-     * @var string
+     * @var
      */
     protected $payment_type_id;
 
     /**
-     * status
      * @Attribute(type = "string")
-     * @var string
+     * @var
      */
     protected $status;
 
     /**
-     * secure_thumbnail
      * @Attribute(type = "string")
-     * @var string
+     * @var
      */
     protected $secure_thumbnail;
 
     /**
-     * thumbnail
      * @Attribute(type = "string")
-     * @var string
+     * @var
      */
     protected $thumbnail;
 
     /**
-     * deferred_capture
      * @Attribute(type = "string")
-     * @var string
+     * @var
      */
     protected $deferred_capture;
 
     /**
-     * settings
      * @Attribute()
-     * @var object
+     * @var
      */
     protected $settings;
 
     /**
-     * additional_info_needed
      * @Attribute()
-     * @var string
+     * @var
      */
     protected $additional_info_needed;
 
     /**
-     * min_allowed_amount
      * @Attribute(type = "float")
-     * @var float
+     * @var
      */
     protected $min_allowed_amount;
 
     /**
-     * max_allowed_amount
      * @Attribute(type = "float")
-     * @var float
+     * @var
      */
     protected $max_allowed_amount;
 
     /**
-     * accreditation_time
      * @Attribute(type = "integer")
-     * @var int
+     * @var
      */
     protected $accreditation_time;
 
     /**
-     * financial_institutions
      * @Attribute(type = "")
-     * @var object
+     * @var
      */
     protected $financial_institutions;
 
     /**
-     * processing_modes
      * @Attribute(type = "")
-     * @var array
+     * @var
      */
     protected $processing_modes;
 }
