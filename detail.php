@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 //MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
-MercadoPago\SDK::setAccessToken('APP_USR-6300848884069710-050717-e6e82bb1dcba9f15dc8d66459cf040ca-47398782');
+MercadoPago\SDK::setAccessToken('TEST-59aeb270-99fd-4443-9598-a8feabdeb312');
  
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
