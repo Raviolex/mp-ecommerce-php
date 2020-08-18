@@ -1,50 +1,51 @@
 <?php
-    $payment_method_id= $_REQUEST["payment_method_id"];
-    $payment_id= $_REQUEST["payment_id"];
 
-    $collection_id = $_REQUEST["collection_id"];
-    $collection_status = $_REQUEST["collection_status"];
-    $external_reference = $_REQUEST["external_reference"];
-    $payment_type = $_REQUEST["payment_type"];
-    $preference_id = $_REQUEST["preference_id"];
-    $site_id = $_REQUEST["site_id"];
-    $processing_mode = $_REQUEST["processing_mode"];
-    $merchant_account_id = $_REQUEST["merchant_account_id"];
+// SDK de Mercado Pago
+require __DIR__ .  '/vendor/autoload.php';
 
-    ?>
-<!DOCTYPE html>
+
+$access_token = 'APP_USR-6300848884069710-050717-e6e82bb1dcba9f15dc8d66459cf040ca-47398782';
+
+
+
+
+$payment_id = $_POST["payment_id"];
+
+
+var_dump($payment_id);
+echo '<br><br>';
+
+$cURLConnection = curl_init();
+curl_setopt($cURLConnection, CURLOPT_URL, "https://api.mercadopago.com/v1/payments/$payment_id?access_token=$access_token");
+curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($cURLConnection);
+echo $response;
+curl_close($cURLConnection);
+
+$jsonResponse = json_decode($response);
+echo '<br><br>';
+var_dump($jsonResponse);
+echo '<br><br>';
+echo $jsonResponse;
+
+
+$order_id = $jsonResponse->order->id;
+$payment_method_id = $jsonResponse->payment_method_id;
+$transaction_amount = $jsonResponse->transaction_amount;
+ 
+
+?>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 <body>
-    <h1>Status: Success !!</h1>
-    <h1>Datos Recibidos</h1>
-        <h3>collection_id</h3>
-        <?php echo $collection_id?>
-        <h3>collection_status</h3>
-        <?php echo $collection_status?>
-        <h3>external_reference</h3>
-        <?php echo $external_reference?>
-        <h3>payment_type</h3>
-        <?php echo $payment_type?>
-        <h3>preference_id</h3>
-        <?php echo $preference_id?>
-        <h3>site_id</h3>
-        <?php echo $site_id?>
-        <h3>processing_mode</h3>
-        <?php echo $processing_mode?>
-        <h3>merchant_account_id</h3>
-        <?php echo $merchant_account_id?>
-        
-        <h3>payment_method_id</h3>
-        <?php echo $payment_method_id?>
-        <h3>payment_id</h3>
-        <?php echo $payment_id?>
-
-        
-    
+  <h1>¡Enhorabuena!</h1>
+  <p>El pago se ha realizado con éxito.</p>
+  <p>El ID de pago de MercadoPago es: <?= $payment_id ?></p>
+  <p>El número de órden del pedido es: <?= $order_id ?></p>
+  <p>El payment_method_id es: <?= $payment_method_id ?></p>
+  <p>El monto pagado es: <?= $transaction_amount ?></p>
+  <p><a href="https://raviolex-mp-commerce-php.herokuapp.com/">Ir al inicio</a></p>
 </body>
 </html>
