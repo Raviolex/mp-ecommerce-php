@@ -67,6 +67,9 @@ $payer = new MercadoPago\Payer();
 
   $preference->save();
 
+
+var_dump($preference);
+
 ?>
 
 
