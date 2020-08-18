@@ -18,8 +18,9 @@ class InstoreTest extends TestCase
             $dotenv = new Dotenv\Dotenv(__DIR__, '../../.env');
             $dotenv->load();
         }
-
-        MercadoPago\SDK::setAccessToken(getenv('ACCESS_TOKEN'));
+        
+        MercadoPago\SDK::setClientId(getenv('CLIENT_ID'));
+        MercadoPago\SDK::setClientSecret(getenv('CLIENT_SECRET')); 
     }
 
     public function testCreatePos() {

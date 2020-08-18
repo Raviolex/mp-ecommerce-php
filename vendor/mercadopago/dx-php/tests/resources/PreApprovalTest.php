@@ -21,13 +21,14 @@ class PreApprovalTest extends \PHPUnit\Framework\TestCase
             $dotenv->load();
         }
 
-        MercadoPago\SDK::setAccessToken(getenv('ACCESS_TOKEN'));
+        MercadoPago\SDK::setClientId(getenv('CLIENT_ID'));
+        MercadoPago\SDK::setClientSecret(getenv('CLIENT_SECRET')); 
     }
 
     public function testCreatePrefence()
     {
         $preapproval_data = new MercadoPago\Preapproval();
-        $preapproval_data->payer_email = getenv('USER_EMAIL');
+        $preapproval_data->payer_email = "dummy@mail.com";
         $preapproval_data->back_url = "https://google.com";
         $preapproval_data->reason = "Reason PreApproval";
         $preapproval_data->external_reference =  "VIP-0000";
