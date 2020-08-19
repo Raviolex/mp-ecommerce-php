@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 //MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
 //MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
-MercadoPago\SDK::setAccessToken('TEST-5989266223361037-073121-a531f5a6525925ed15a78001a75b950a-75765143');
+MercadoPago\SDK::setAccessToken('APP_USR-6300848884069710-050717-e6e82bb1dcba9f15dc8d66459cf040ca-47398782');
  
 
 
@@ -58,10 +58,10 @@ $payer = new MercadoPago\Payer();
     "number" => "22223333"
   );
   
-//   $payer->identification = array(
-//     "type" => "DNI",
-//     "number" => "12345678"
-//   );
+   $payer->identification = array(
+     "type" => "DNI",
+     "number" => "12345678"
+   );
   
   $payer->address = array(
     "street_name" => "False",
